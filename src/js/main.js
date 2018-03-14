@@ -2,20 +2,6 @@ var LUMBER = window.LUMBER || {};
 
 LUMBER.main = (function() {
   var init = function() {
-    var vids = ['jim_punk_2', 'Reggae'];
-    var vid = vids[Math.floor(Math.random() * 2)];
-    var el = $('video');
-    var props = [{ 'suffix': '.mp4', 'type': 'mp4' },
-      { 'suffix': '.webm', 'type': 'webm' },
-      { 'suffix': '.ogv', 'type': 'ogg' }
-    ];
-
-    for (var i = 0; i < props.length; i++) {
-      var curr = props[i];
-      el.append($('<source src="videos/' + vid + curr.suffix + '" type="video/' + curr.type + '">'));
-
-    }
-
 
     // timer
     // Set the date we're counting down to
@@ -35,13 +21,29 @@ LUMBER.main = (function() {
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      console.log(days + 'd ' + hours + 'h' +
-        minutes + 'm ' + seconds + 's ');
-      $('.timer').text(days + 'd ' + hours + 'h ' +
-        minutes + 'm ' + seconds + 's ');
+
+      $('.timer').text(days + ' days ' + hours + ' hours ' +
+        minutes + ' minutes ' + seconds + ' seconds ');
 
 
     }, 1000);
+
+    var vids = ['jim_punk_2', 'Reggae'];
+    var vid = vids[Math.floor(Math.random() * 2)];
+    var el = $('video');
+    var props = [{ 'suffix': '.mp4', 'type': 'mp4' },
+      { 'suffix': '.webm', 'type': 'webm' },
+      { 'suffix': '.ogv', 'type': 'ogg' }
+    ];
+
+    for (var i = 0; i < props.length; i++) {
+      var curr = props[i];
+      el.append($('<source src="videos/' + vid + curr.suffix + '" type="video/' + curr.type + '">'));
+
+    }
+
+
+
   };
 
   return {
