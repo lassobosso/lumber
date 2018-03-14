@@ -1,2 +1,23 @@
 @import "./_reset";
 // main
+body {
+    color: #fff;
+    background: #000;
+    .logo {
+        margin: 0 auto;
+        background: #000 url(../images/logo.png) no-repeat center center;
+        background-size: 150px;
+        width: 200px;
+        height: 200px;
+    }
+    .video {
+        margin: 0 auto;
+    }
+    .timer {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 50px;
+    }
+}
